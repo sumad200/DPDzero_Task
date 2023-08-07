@@ -1,0 +1,34 @@
+version: "3.9"
+services:
+  pgsqldb:
+    container_name: postgres_db
+    image: postgres:alpine
+    restart: unless-stopped
+    volumes:
+      - pgsql_db:/var/lib/postgresql/data
+    environment:
+      - PGUSER=admin
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=itsasecret
+      - POSTGRES_DB=dpdzerotask
+    healthcheck:
+      test: "pg_isready -h pgsqldb"
+      interval: 5s
+      timeout: 5s
+      retries: 7
+
+  api:
+    build: .
+    ports:
+      - 6900:6900
+    environment:
+      PORT: 6900
+      TOKEN_SECRET: 97eca311899a7ec49af70457521e7ee4c17a2a79d0ee487ec98c03714bfd913ee6c8e9d74088c04d3d8a90f53c91d15c6913a503ccfa706b8de5ab1fcf8fa1fee567794c51990899990baf7c20b89b2f0b7c9327798a4b4f9cb1d194e27c8fb1a988898142264678dfc120f102ef4f0d96feba71be5c191408252275dd405987
+      DATABASE_URL: postgresql://admin:itsasecret@postgres_db:5432/dpdzerotask
+    depends_on:
+      pgsqldb:
+        condition: service_healthy
+        restart: true
+
+volumes:
+  pgsql_db: {}
