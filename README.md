@@ -55,7 +55,7 @@ API endpoint documentation can be found [here](https://bit.ly/dpdzero-fullstack-
 
 ## Getting Started
 
-To set up the project locally, follow these simple example steps.
+To set up the project locally, follow these simple steps.
 
 ### Prerequisites
 
