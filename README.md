@@ -1,13 +1,13 @@
 # DPDzero Take home assignment
 
-This repository contains a node.js/Express solution for the DPDzero API assignment, the assignment requirements and the
+This repository contains a Node.js/Express solution for the DPDzero API assignment, the assignment requirements and the
 API endpoint documentation can be found [here](https://bit.ly/dpdzero-fullstack-engg)
 
 ## Project Overview
 
 - ### Backend framework
 
-  The backend is written in JavaScript (node.js), express is the framework of choice, Express is chosen due to the following reasons:
+  The backend is written in JavaScript (Node.js), express is the framework of choice, Express is the framework of choice due to the following reasons:
 
   - Excellent Community support
   - Easy to write middleware
@@ -59,7 +59,7 @@ To set up the project locally, follow these simple steps.
 
 ### Prerequisites
 
-- It is assumed that Docker is installed and it is running.
+- Make sure that Docker is installed and it is running.
 
 ### Installation
 
@@ -75,15 +75,15 @@ To set up the project locally, follow these simple steps.
    cd DPDzero_Task
    ```
 
-3. Ensure that docker daemon is running and run the following command to build the images
+3. Ensure that docker daemon is running and execute the following command to build the images
 
    ```sh
    docker compose up
    ```
 
-   This will take a few minutes.
+   This may take a few minutes.
 
-4. Once the containers are up and running, the last output in the terminal would be as follows:
+4. Once the containers are up and running, the last output in the terminal should be as follows:
 
    ```sh
    dpdzero_task-api-1  | DPD Zero Task Running on port 6900
@@ -93,7 +93,7 @@ To set up the project locally, follow these simple steps.
 
 ## Usage
 
-If everything was set up properly visiting <http://localhost:6900/> on your web browser or making a `GET` request to <http://localhost:6900/> should return the following json as response
+If the setup was successful, visiting <http://localhost:6900/> on your web browser or making a `GET` request to <http://localhost:6900/> should return the following JSON response:
 
 ```json
 {
@@ -101,5 +101,4 @@ If everything was set up properly visiting <http://localhost:6900/> on your web 
 }
 ```
 
-It is recommended to use a API client like Postman or Insomnia to make requests easily.
-
+It is recommended to use a API client like Postman or Insomnia to make requests easily. The documentation for the available endpoints can be viewed [here](https://dpdzero.notion.site/Take-home-assignment-Software-Developer-a1354d18891744fa9fc84815f040c76d?pvs=25#694d7900382a43fbbe54bafa95e2628a)
