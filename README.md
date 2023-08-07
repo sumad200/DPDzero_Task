@@ -12,11 +12,11 @@ API endpoint documentation can be found [here](https://bit.ly/dpdzero-fullstack-
   - Excellent Community support
   - Easy to write middleware
   - Large number of utility packages and libraries, courtesy of npm
-  - Wide selection of ORMs (This project uses prisma)
+  - Wide selection of ORMs (This project uses Prisma)
 
 - ### Database Schema
 
-  This project uses PostgreSQL as the database but it can be replaced with any other database supported by prisma by simply changing the provider in `schema.prisma` file and editing the `DATABASE_URL` environment variable with the correct connection string.
+  This project uses PostgreSQL as the database. Since this project uses Prisma ORM, it can be easily replaced with any other database supported by Prisma by simply changing the provider in `schema.prisma` file and editing the `DATABASE_URL` environment variable in `docker-compose.yml` with the correct connection string and making other necessary changes.
 
   The database schema is as follows:
 
@@ -101,4 +101,4 @@ If the setup was successful, visiting <http://localhost:6900/> on your web brows
 }
 ```
 
-It is recommended to use a API client like Postman or Insomnia to make requests easily. The documentation for the available endpoints can be viewed [here](https://dpdzero.notion.site/Take-home-assignment-Software-Developer-a1354d18891744fa9fc84815f040c76d?pvs=25#694d7900382a43fbbe54bafa95e2628a)
+It is recommended to use a API client like Postman or Insomnia to make requests easily. The documentation for the endpoints available can be viewed [here](https://dpdzero.notion.site/Take-home-assignment-Software-Developer-a1354d18891744fa9fc84815f040c76d?pvs=25#694d7900382a43fbbe54bafa95e2628a)
