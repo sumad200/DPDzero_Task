@@ -7,7 +7,7 @@ API endpoint documentation can be found [here](https://bit.ly/dpdzero-fullstack-
 
 - ### Backend framework
 
-  The backend is written in JavaScript (Node.js), Express is the framework of choice due to the following reasons:
+  The backend is written in JavaScript (Node.js). Express is the framework of choice due to the following reasons:
 
   - Excellent Community support
   - Easy to write middleware
