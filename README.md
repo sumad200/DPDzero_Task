@@ -101,4 +101,4 @@ If the setup was successful, visiting <http://localhost:6900/> on your web brows
 }
 ```
 
-It is recommended to use a API client like Postman or Insomnia to make requests easily. Documentation for the API endpoints can be viewed [here](https://dpdzero.notion.site/Take-home-assignment-Software-Developer-a1354d18891744fa9fc84815f040c76d?pvs=25#694d7900382a43fbbe54bafa95e2628a)
+If you get the above response, you have successfully set up the project locally and can make requests to the API, the documentation for the available endpoints can be viewed [here](https://dpdzero.notion.site/Take-home-assignment-Software-Developer-a1354d18891744fa9fc84815f040c76d?pvs=25#694d7900382a43fbbe54bafa95e2628a) It is recommended to use an API client like Postman or Insomnia to make requests easily.
