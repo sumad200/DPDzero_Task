@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-deployment
+  labels:
+    app: api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+        - name: api
+          image: dpd-z-api:v1
+          ports:
+            - containerPort: 6900
+          env:
+            - name: TOKEN_SECRET
+              value: "97eca311899a7ec49af70457521e7ee4c17a2a79d0ee487ec98c03714bfd913ee6c8e9d74088c04d3d8a90f53c91d15c6913a503ccfa706b8de5ab1fcf8fa1fee567794c51990899990baf7c20b89b2f0b7c9327798a4b4f9cb1d194e27c8fb1a988898142264678dfc120f102ef4f0d96feba71be5c191408252275dd405987"
+            - name: DATABASE_URL
+              value: "postgresql://admin:itsasecret@postgres-db:5432/dpdzerotask"
+            - name:  NODE_TLS_REJECT_UNAUTHORIZED
+              value: "0"
+            - name: PORT
+              value: "6900"

@@ -1,0 +1,60 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: my-rules
+  labels:
+    release: monitoring
+spec:
+  groups:
+    - name: instance-errors
+      rules:
+        - alert: RandomAlertFun
+          expr: vector(1)
+          for: 1m
+          labels:
+            severity: critical
+          annotations:
+            summary: "Something's Down"
+            description: "Go Figure out"
+
+---
+
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: slack-webhook
+  labels:
+    release: monitoring
+type: Opaque
+stringData:
+  slack_webhook_url: 'https://hooks.slack.com/services/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'
+
+---
+
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: AlertmanagerConfig
+metadata:
+  name: alertmanager-config
+  labels:
+    release: monitoring
+spec:
+  route:
+    groupBy: ['alertname']
+    groupWait: 30s
+    groupInterval: 5m
+    repeatInterval: 1h
+    continue: true
+    receiver: 'slack-notification'
+    routes:
+      - receiver: 'slack-notification'
+        continue: true
+  receivers:
+    - name: 'slack-notification'
+      slackConfigs:
+        - channel: 'kube-alerts'
+          apiURL:
+            name: slack-webhook
+            key: slack_webhook_url
+          title: "{{ range .Alerts }}{{ .Annotations.summary }}\n{{ end }}"
+          text: "{{ range .Alerts }}{{ .Annotations.description }}\n{{ end }}"

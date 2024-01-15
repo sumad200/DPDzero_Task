@@ -1,0 +1,8 @@
+{
+  "yaml.schemas": {
+    "https://json.schemastore.org/prometheus.rules.json": [
+      "file:///c%3A/prac/dpdZTask/k8s/alert-files.yml",
+      "file:///c%3A/prac/dpdZTask/k8s/alert-rule.yml"
+    ]
+  }
+}
